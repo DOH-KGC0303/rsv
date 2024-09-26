@@ -27,9 +27,9 @@ filter:
     F: 3000
     
 subsampling:
-  state: --query "division == 'Washington'" --subsample-max-sequences 500 
+  state: --query "division == 'Washington' & {w.build_name}_coverage > 0.3" --subsample-max-sequences 1000 
   # "min_coverage = lambda w: f'{w.build_name}_coverage > 0.3'"
-  country: --query "division != 'Washington'" "{w.build_name}_coverage > 0.3" --subsample-max-sequences 200
+  country: --query "division != 'Washington' & {w.build_name}_coverage > 0.3" --subsample-max-sequences 500
    #country: --query "division != 'Washington'" "min_coverage = lambda w: f'{w.build_name}_coverage > 0.3'" --subsample-max-sequences 200
   #country: --query "min_coverage = lambda w: f'{w.build_name}_coverage<{config["filter"]["min_coverage"].get(w.build_name, 0.3)}"  --subsample-max-sequences 200
   # "min_coverage = lambda w: f'{w.build_name}_coverage<{config["filter"]["min_coverage"].get(w.build_name, 0.3)}'"
