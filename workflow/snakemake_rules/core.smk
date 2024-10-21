@@ -83,12 +83,14 @@ rule intermediate_sample:
     output:
         strains = "results/{a_or_b}/{build_name}/sample_strains_{sample_name}.txt",
     params:
-        augur_filter_args = lambda wildcards: config.get("subsampling", {}).get(wildcards.sample_name, ""),
-#        min_coverage = lambda w: f'{w.build_name}_coverage<{config["filter"]["min_coverage"].get(w.build_name, 0.3)}',
+ #       augur_filter_args = lambda wildcards: config.get("subsampling", {}).get(wildcards.sample_name, ""),
+        augur_filter_args = lambda wildcards: config.get("subsampling", {}).get(wildcards.sample_name, "").replace("{build_name_coverage}", f"{wildcards.build_name}_coverage"),
+#        min_coverage = lambda w: f'{wildcards.build_name}_coverage<{config["filter"]["min_coverage"].get(w.build_name, 0.3)}',
         strain_id=config["strain_id_field"],
         group_by = config["filter"]["group_by"],
     shell:
         """
+        echo "build_name: {wildcards.build_name}"
         augur filter \
             --metadata {input.metadata} \
             {params.augur_filter_args} \
