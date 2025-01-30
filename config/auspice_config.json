@@ -1,8 +1,7 @@
 {
   "title": "Genomic epidemiology of RSV in Washington State",
   "maintainers": [
-    {"name": "Kathleen Conery"},
-    
+    {"name": "Kathleen Conery", "url": "http://nextstrain.org"}
   ],
   "data_provenance": [
     {
