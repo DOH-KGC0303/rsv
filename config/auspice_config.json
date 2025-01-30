@@ -1,8 +1,8 @@
 {
-  "title": "Genomic epidemiology of RSV",
+  "title": "Genomic epidemiology of RSV in Washington State",
   "maintainers": [
-    {"name": "Laura Urbanska", "url": "http://nextstrain.org"},
-    {"name": "Richard Neher", "url": "http://nextstrain.org"}
+    {"name": "Kathleen Conery"},
+    
   ],
   "data_provenance": [
     {
@@ -40,6 +40,11 @@
     {
       "key": "division",
       "title": "division",
+      "type": "categorical"
+    },
+    {
+      "key": "clade",
+      "title": "Clade",
       "type": "categorical"
     }
   ],
