@@ -30,7 +30,7 @@ rule export:
     message: "Exporting data files for auspice"
     input:
         tree = rules.refine.output.tree,
-        metadata = rules.filter.input.metadata,
+        metadata = rules.intermediate_sample.input.metadata,
         node_data = get_node_data,
         colors = rules.colors.output.colors,
         auspice_config = config["files"]["auspice_config"],
@@ -41,7 +41,7 @@ rule export:
     params:
         title = lambda w: f"RSV-{w.a_or_b.upper()} phylogeny",
         strain_id=config["strain_id_field"],
-        metadata_colors = lambda w: '' if w.build_name=='genome' else f"--color-by-metadata clade"
+        metadata_colors = lambda w: '' #if w.build_name=='genome' else f"--color-by-metadata clade"
     shell:
         """
         augur export v2 \
@@ -60,7 +60,7 @@ rule export:
 rule final_strain_name:
     input:
         auspice_json= rules.export.output.auspice_json,
-        metadata = rules.filter.input.metadata,
+        metadata = rules.intermediate_sample.input.metadata,
     output:
         auspice_json=build_dir + "/{a_or_b}/{build_name}/tree_renamed.json"
     params:
