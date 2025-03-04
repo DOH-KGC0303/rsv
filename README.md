@@ -1,8 +1,23 @@
-# nextstrain.org/rsv
+# RSV Washington Focused Build
 
-This is the Nextstrain build for respiratory syncytial virus (RSV). Output from this build is available at nextstrain.org/rsv.
+## Build overview 
+- **Build name:** RSV Washington Focused Build
+- **Pathogen/Strain:** RSV
+- **Scope:** Whole genome, F gene and G gene builds for both RSV A and RSV B
+- **Purpose:** This repository contains the Nextstrain build for Washington State genomic surveillance of RSV.
+- **Nextstrain Build Location:**
 
-## Input Data
+## Table of Contents  
+
+## Getting Started 
+- This repository will generate six views, three each for RSV A and RSV B
+    - Genome: Shows evolution of the entire genome
+    - G Gene: Focuses on only the G gene which is highly variable and for which there are more available sequences
+    - F Gene: Focuses on only the F gene, which currently does not have any clade annotations available.
+ 
+-This build also features washington focused tierd subsmapling 
+
+## Data Sources and Inputs
 
 Input metadata and sequences for RSV-A and RSV-B are available via <https://data.nextstrain.org>
 
@@ -17,10 +32,52 @@ Please contact these labs first if you plan to publish using these data.
 RSV sequences and metadata can be downloaded in the `/ingest` folder using
 `nextstrain build --cpus 1 ingest` or `nextstrain build --cpus 1 .` if running directly from the `/ingest` directory.
 
+## Setup & Dependencies 
+
+### Installation
+
+Follow the standard [installation instructions](https://docs.nextstrain.org/en/latest/install.html) for Nextstrain's suite of software tools.
+
+To check that Nextstrain is installed:
+```
+nextstrain check-setup
+```
+### Clone the repository:
+
+```
+git clone https://github.com/DOH-KGC0303/rsv
+cd rsv
+```
+
+## Run the Build with Test Data
+This build does not currently have test data available. This feature is coming soon. 
+
+## Repository File Structure Overview
+The file structure of the repository is as follows with `*`" folders denoting folders that are the build's expected outputs.
+
+```
+.
+├── README.md
+├── Snakefile
+├── auspice*
+├── ingest
+├── config
+├── nextclade
+├── results*
+├── workflow
+└── scripts
+```
+
+- `Snakefile`: Snakefile description
+- `config/`: contains what
+- `new_data/`: contains What
+- `scripts/`: contains what
+- `clade-labeling`: contains what
+  
+### `ingest/vendored`
+
 The ingest pipeline is based on the Nextstrain mpox ingest workflow (<https://github.com/nextstrain/mpox/tree/master/ingest>).
 Running the ingest pipeline produces `ingest/data/{a,b}/metadata.tsv` and `ingest/data/{a,b}/sequences.fasta`.
-
-### `ingest/vendored`
 
 This repository uses [`git subrepo`](https://github.com/ingydotnet/git-subrepo) to manage copies of ingest scripts in [`ingest/vendored`](./ingest/vendored), from [nextstrain/ingest](https://github.com/nextstrain/ingest). To pull new changes from the central ingest repository, first install `git subrepo`, then run:
 
@@ -31,9 +88,6 @@ See [ingest/vendored/README.md](./ingest/vendored/README.md#vendoring) for instr
 The workflow produces whole genome and G gene trees for RSV-A and RSV-B.
 To run the workflow, use `snakemake -j4 -p --configfile config/configfile.yaml` and `nextstrain view auspice` to visualise results.
 
-## Installation
-
-Follow the standard [installation instructions](https://docs.nextstrain.org/en/latest/install.html) for Nextstrain's suite of software tools.
 
 ## Data use
 
