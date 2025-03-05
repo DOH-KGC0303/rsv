@@ -62,17 +62,30 @@ The file structure of the repository is as follows with `*`" folders denoting fo
 ├── auspice*
 ├── ingest
 ├── config
+    ── auspice_config.json
+    ── configfile.yaml
+    ── description.md
+    ── outliers.txt
 ├── nextclade
 ├── results*
 ├── workflow
+    ── snakemake_rules
+        ── core.smk
 └── scripts
 ```
 
-- `Snakefile`: Snakefile description
-- `config/`: contains what
-- `new_data/`: contains What
-- `scripts/`: contains what
-- `clade-labeling`: contains what
+- `Snakefile`: ?
+- `ingest`: see following section
+- `config/`: In addition to the files listed the config folder contains the sequence data for the A and B referecnce sequences, clade information, and coloring data.
+     - `auspice_config.json`: Config file pertaining to how data is displayed in Auspice
+    - `configfile.yaml`: Config file used in creating the build, including filtering and subsampling 
+    - `description.md`: Markdown file for the description displayed under the visualizations in Auspice
+    - `outliers.txt`: Text file of sequences to be excluded from the build
+- `nextclade`: ??? 
+- `workflow/`:
+    - `snakemake_rules/`: contains a variety of snakemake rules. Most notably:
+        - `core.smk`: The sequence of rules that will get followed in running the build, this includes indexing and aligning sequences, and filtering based on the criteria found in the config files.     
+- `scripts/`: A set of neccessary python scripts. 
   
 ### `ingest/vendored`
 
@@ -83,11 +96,20 @@ This repository uses [`git subrepo`](https://github.com/ingydotnet/git-subrepo) 
 
 See [ingest/vendored/README.md](./ingest/vendored/README.md#vendoring) for instructions on how to update the vendored scripts.
 
-## Run Analysis Pipeline
+## Expected Outputs and Interpretation
+After successfully running the build there will be two output folders containing the build results.
 
-The workflow produces whole genome and G gene trees for RSV-A and RSV-B.
-To run the workflow, use `snakemake -j4 -p --configfile config/configfile.yaml` and `nextstrain view auspice` to visualise results.
+- `auspice/` folder contains:
+- `results/` folder contains:
 
+## Scientific Decisions 
+- **Tiered subsampling**: Includes all Washington sequences while maintaining national/global context. Outside of Washington sequences are sampled evenly across countries and years of collection. 
+- **Other adjustments**:
+  - `config/includes.txt`: These sequences are always included into our sampling strategy as they are relevant to our epidemiological investigations.
+  - `config/excludes.txt`: These sequences are always excluded from our subsampling and filtering due to duplication, known data errors or based on epidemiological linkage knowledge.
+
+## Adapting for Another State
+ - **Tiered subsampling**: To change the focus of the tiered subsampling the subsampling section needs to be updated in configfile.yaml found in the config folder. 
 
 ## Data use
 
