@@ -49,7 +49,13 @@ git clone https://github.com/DOH-KGC0303/rsv
 cd rsv
 ```
 
-## Run the Build with Test Data
+## Running the Build 
+From within the repository the build can be run with: 
+```
+nextstrain build . 
+```
+
+### Run the Build with Test Data
 This build does not currently have test data available. This feature is coming soon. 
 
 ## Repository File Structure Overview
