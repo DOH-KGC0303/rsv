@@ -19,7 +19,9 @@
 
 ## Data Sources and Inputs
 
-Input metadata and sequences for RSV-A and RSV-B are available via <https://data.nextstrain.org>
+This build pulls all RSV sequences from GenBank when running the ingest pipeline. 
+
+Input metadata and sequences for RSV-A and RSV-B are also available via <https://data.nextstrain.org>
 
 - [RSV-A sequences](https://data.nextstrain.org/files/workflows/rsv/a/sequences.fasta.xz)
 - [RSV-A metadata](https://data.nextstrain.org/files/workflows/rsv/a/metadata.tsv.gz)
