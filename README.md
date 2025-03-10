@@ -107,8 +107,8 @@ See [ingest/vendored/README.md](./ingest/vendored/README.md#vendoring) for instr
 ## Expected Outputs and Interpretation
 After successfully running the build there will be two output folders containing the build results.
 
-- `auspice/` folder contains:
-- `results/` folder contains:
+- `auspice/` folder contains two jsons each for all six of the builds. One contains the root sequence used in building the tree. The second all of the visualization information that will be used by Auspice in displaying the data, including gene annotaions and coloring information. 
+- `results/` folder contains nested folders for each of the six trees. These folders contain any other outputs created in the running of the build, including sequence alignments and the tree.json. 
 
 ## Scientific Decisions 
 - **Tiered subsampling**: Includes all Washington sequences while maintaining national/global context. Outside of Washington sequences are sampled evenly across countries and years of collection. 
