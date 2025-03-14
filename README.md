@@ -15,7 +15,7 @@
     - G Gene: Focuses on only the G gene which is highly variable and for which there are more available sequences
     - F Gene: Focuses on only the F gene, which currently does not have any clade annotations available.
  
--This build also features washington focused tierd subsmapling 
+- This build also features washington focused tierd subsmapling 
 
 ## Data Sources and Inputs
 
@@ -82,14 +82,14 @@ The file structure of the repository is as follows with `*`" folders denoting fo
 └── scripts
 ```
 
-- `Snakefile`: ?
-- `ingest`: see following section
+- `Snakefile`: A list of rules in the order they will be run in when the workflow is run. 
+- `ingest`: See following section
 - `config/`: In addition to the files listed the config folder contains the sequence data for the A and B referecnce sequences, clade information, and coloring data.
      - `auspice_config.json`: Config file pertaining to how data is displayed in Auspice
     - `configfile.yaml`: Config file used in creating the build, including filtering and subsampling 
     - `description.md`: Markdown file for the description displayed under the visualizations in Auspice
     - `outliers.txt`: Text file of sequences to be excluded from the build
-- `nextclade`: ??? 
+- `nextclade`: This folder contains the workflow used to make the nextclade datasets for RSV. More information on nextclade datasets can be found in the [`nextclade repo`](https://github.com/nextstrain/nextclade_data).
 - `workflow/`:
     - `snakemake_rules/`: contains a variety of snakemake rules. Most notably:
         - `core.smk`: The sequence of rules that will get followed in running the build, this includes indexing and aligning sequences, and filtering based on the criteria found in the config files.     
