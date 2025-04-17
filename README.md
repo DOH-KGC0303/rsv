@@ -111,7 +111,12 @@ After successfully running the build there will be two output folders containing
 - `results/` folder contains nested folders for each of the six trees. These folders contain any other outputs created in the running of the build, including sequence alignments and the tree.json. 
 
 ## Scientific Decisions 
-- **Tiered subsampling**: Includes all Washington sequences while maintaining national/global context. Outside of Washington sequences are sampled evenly across countries and years of collection. 
+- **Tiered subsampling**: Tiered subsampling is not used in this build, which includes all Washington sequences while maintaining national/global context. Outside of Washington sequences are sampled evenly across countries and years of collection. This decision was made after it was observed that Washington sequences grouped on the trees with sequences from very disparate locations, indicating that samples from neighboring regions were no more likely to influence what was coming into washington that samples from farther away.
+- **Root Selection**: No root was specified for the trees in this build, allowing for Nextstrain default of using least squares to determine the best root based on the data.
+- **Referemce Sequences**:
+      - **RSV A**: These builds use reference sequence A/England/397/2017  (EPI_ISL_412866, GISAID ID: PP109421.1), a virus collected in England on October 30th, 2017, as the reference sequence for RSV A. This sequence has the duplication in the G-protein shared by all currently circulating variants. 
+      - **RSV B**: These builds use reference sequence B/Australia/VIC-RCH056/2019 (EPI_ISL_1653999, GISAID ID: OP975389) as the reference sequence for RSV B. This sequence has the duplication in the G-protein shared by all currently circulating variants.
+- **Molecular clock IQD range**: IQD range was of 4 is consistent with the [Nextrain global RSV build](https://nextstrain.org/rsv/a/genome/all-time) 
 - **Other adjustments**:
   - `config/includes.txt`: These sequences are always included into our sampling strategy as they are relevant to our epidemiological investigations.
   - `config/excludes.txt`: These sequences are always excluded from our subsampling and filtering due to duplication, known data errors or based on epidemiological linkage knowledge.
