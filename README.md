@@ -139,9 +139,18 @@ After successfully running the build there will be two output folders containing
 ## Adapting for Another State
  - **Tiered subsampling**: To change the focus of the tiered subsampling the subsampling section needs to be updated in configfile.yaml found in the config folder. 
 
+## Contributing
+For any questions please submit them to our [Discussions](https://github.com/NW-PaGe/avian-flu/discussions) page otherwise software issues and requests can be logged as a Git [Issue](https://github.com/NW-PaGe/avian-flu/issues).
+
+## License
+This project is licensed under a modified GPL-3.0 License.
+You may use, modify, and distribute this work, but commercial use is strictly prohibited without prior written permission.
+
 ## Acknowledgements
 
 We gratefully acknowledge the authors, originating and submitting laboratories of the genetic sequences and metadata for sharing their work. Please note that although data generators have generously shared data in an open fashion, that does not mean there should be free license to publish on this data. Data generators should be cited where possible and collaborations should be sought in some circumstances.
+
+[add acknowledgements to AMD teams, WADDL, etc... for contributing to this work]
 
 ## Update example data
 
