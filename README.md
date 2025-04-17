@@ -8,6 +8,21 @@
 - **Nextstrain Build Location:**
 
 ## Table of Contents  
+- [Getting Started](#getting-started)
+  - [Data Sources & Inputs](#data-sources-and-inputs)
+  - [Setup & Dependencies](#setup--dependencies)
+    - [Installation](#installation)
+    - [Clone the repository](#clone-the-repository)
+- [Running the Build](#running-the-build)
+- [Repository File Structure Overview](#repository-file-structure-overview)
+- [Expected Outputs and Interpretation](#expected-outputs-and-interpretation)
+- [Scientific Decisions](#scientific-decisions)
+- [Adapting for Another State](#adapting-for-another-state)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
+- [Update Example Data](#update_example_data)
+- [Sending data to the nextclade_data repo](#sending_data_to_the_nextclade_data_repo)
 
 ## Getting Started 
 - This repository will generate six views, three each for RSV A and RSV B
@@ -124,7 +139,7 @@ After successfully running the build there will be two output folders containing
 ## Adapting for Another State
  - **Tiered subsampling**: To change the focus of the tiered subsampling the subsampling section needs to be updated in configfile.yaml found in the config folder. 
 
-## Data use
+## Acknowledgements
 
 We gratefully acknowledge the authors, originating and submitting laboratories of the genetic sequences and metadata for sharing their work. Please note that although data generators have generously shared data in an open fashion, that does not mean there should be free license to publish on this data. Data generators should be cited where possible and collaborations should be sought in some circumstances.
 
