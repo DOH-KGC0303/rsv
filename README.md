@@ -150,7 +150,7 @@ You may use, modify, and distribute this work, but commercial use is strictly pr
 
 We gratefully acknowledge the authors, originating and submitting laboratories of the genetic sequences and metadata for sharing their work. Please note that although data generators have generously shared data in an open fashion, that does not mean there should be free license to publish on this data. Data generators should be cited where possible and collaborations should be sought in some circumstances.
 
-[add acknowledgements to AMD teams, WADDL, etc... for contributing to this work]
+We also gratefully acknowlege the work done by the Bedford lab and NextStrain team who were the original authors of this build. 
 
 ## Update example data
 
