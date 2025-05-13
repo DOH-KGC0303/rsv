@@ -74,8 +74,8 @@ rule newreference:
 #             --subsample-max-sequences {params.subsample_max_sequences} \
 #         """
 
-# 1. Sample 100 sequences from Washington state
-# 2. Sample 50 sequences from the rest of the United States
+# 1. Sample 10000 sequences from Washington state
+# 2. Sample 5000 sequences from the rest of the world
 rule intermediate_sample:
     input:
         metadata = "data/{a_or_b}/metadata.tsv",
