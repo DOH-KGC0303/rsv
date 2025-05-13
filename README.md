@@ -131,6 +131,7 @@ After successfully running the build there will be two output folders containing
 - **Referemce Sequences**:
       - **RSV A**: These builds use reference sequence A/England/397/2017  (EPI_ISL_412866, GISAID ID: PP109421.1), a virus collected in England on October 30th, 2017, as the reference sequence for RSV A. This sequence has the duplication in the G-protein shared by all currently circulating variants. 
       - **RSV B**: These builds use reference sequence B/Australia/VIC-RCH056/2019 (EPI_ISL_1653999, GISAID ID: OP975389) as the reference sequence for RSV B. This sequence has the duplication in the G-protein shared by all currently circulating variants.
+- **Parent Node**: No sequence is specified as a parent node in this build. Mutations in the tree are therefore called against the inferred root node sequence. 
 - **Molecular clock IQD range**: IQD range was of 4 is consistent with the [Nextrain global RSV build](https://nextstrain.org/rsv/a/genome/all-time) 
 - **Other adjustments**:
   - `config/includes.txt`: These sequences are always included into our sampling strategy as they are relevant to our epidemiological investigations.
